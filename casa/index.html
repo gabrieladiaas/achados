@@ -35,7 +35,6 @@ footer{margin-top:40px;text-align:center;color:var(--muted);font-size:12px;line-
 <nav id="menu"></nav>
 <main id="lista"></main>
 <footer><p>Como associada da Amazon, eu ganho com compras qualificadas. Os links do Mercado Livre e da Shopee também são de afiliada. Você não paga nada a mais.</p>
-<p>Preços conferidos em <span id="data"></span> e podem mudar a qualquer momento.</p>
 <p class="handle">✦ @gabrieladiaas ✦</p></footer>
 </div>
 <script>
@@ -65,10 +64,10 @@ var menu="",html="";
 cats.forEach(function(c,i){var itens=P.filter(function(p){return p.cat===c});
 menu+='<a href="#c'+i+'">'+esc(c)+'</a>';
 html+='<section id="c'+i+'"><h2>'+esc(c)+' <small>'+itens.length+(itens.length>1?' itens':' item')+'</small></h2>';
-itens.forEach(function(p){html+='<a class="item" href="'+esc(p.link)+'" target="_blank" rel="noopener sponsored"><img class="thumb" src="'+esc(p.img)+'" alt="" loading="lazy" referrerpolicy="no-referrer"><div class="info"><span class="loja '+p.loja+'">'+LOJAS[p.loja]+'</span><div class="name">'+esc(p.nome)+'</div><div class="desc">'+esc(p.desc)+'</div><span class="por">'+esc(p.preco)+'</span></div><span class="go">Ver ›</span></a>'});
+itens.forEach(function(p){html+='<a class="item" href="'+esc(p.link)+'" target="_blank" rel="noopener sponsored"><img class="thumb" src="'+esc(p.img)+'" alt="" loading="lazy" referrerpolicy="no-referrer"><div class="info"><span class="loja '+p.loja+'">'+LOJAS[p.loja]+'</span><div class="name">'+esc(p.nome)+'</div><div class="desc">'+esc(p.desc)+'</div></div><span class="go">Ver ›</span></a>'});
 html+='</section>'});
 document.getElementById("menu").innerHTML=cats.length>1?menu:"";
 document.getElementById("lista").innerHTML=html;
-document.getElementById("data").textContent=ATUALIZADO;
+
 </script>
 </body></html>
